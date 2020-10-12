@@ -12,7 +12,7 @@ class Header extends Component{
                             <img src={Logo} className="menu_img" alt="img_menu"/>
                             <ul className="menu">
                                 <li className="menu_item">home</li>
-                                <li className="menu_item">planos</li>
+                                <li className="menu_item">receitas</li>
                                 <li className="menu_item">quem somos</li>
                             </ul>
                     </header>
