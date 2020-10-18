@@ -12,7 +12,7 @@ class Content extends Component{
                 <section className="content">
                     <h1 className="title">Aqui você verá as melhores receitas de todos os tempos.</h1>
                    
-                <Card img={StrongOnOff} title="Strogonofe de carne com cenoura." />
+                    <Card img={StrongOnOff} title="Strogonofe de carne com cenoura." />
                 </section>  
             </>
         );
