@@ -59,3 +59,19 @@
     padding: 0;
 
 }
+@media screen and (min-width:768px){
+    .card_text{
+        font-size: 1.2rem;
+    }
+    .card_ing{
+        font-size: 1.25rem;
+    }
+    .card_ingrediente{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+@media screen and (min-width:992px){
+  
+    
+}
