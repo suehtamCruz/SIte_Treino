@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
 
+import api from '../../connection/conect';
+
 import './styleCard.css';
 class Card extends Component{
    
+    // state = {
+    //     title : "",
+    //     time : "",
+    //     porcoes : "",
+    //     ingredientes : [],
+    //     tags : [],
+
+    // }
+    async componentDidMount(){
+        const response = await (await api.get('')).data;
+        console.log(response[0].title);
+        this.title = response[0].title;
+    }   
+
     render(){
         return(
-            <>
+            <>  
+                
                  <div className="card">
                         <img className="card_img" src={this.props.img} alt="img card" />
                         <div className="card_line" />
                         <p className="card_text">{this.props.title}</p>
-                        <h2 className="card_ing">Ingredientes</h2>
+                        <h2 className="card_ing">{this.title}</h2>
                         <ul className="card_ingredientes-lista">
                             <li className="card_ingrediente">500g de contra-filé</li>
                             <li className="card_ingrediente">3 colheres de sopa de manteiga</li>
