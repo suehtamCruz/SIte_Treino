@@ -5,21 +5,30 @@ import api from '../../connection/conect';
 import './styleCard.css';
 class Card extends Component{
    
-    // state = {
-    //     title : "",
-    //     time : "",
-    //     porcoes : "",
-    //     ingredientes : [],
-    //     tags : [],
+    state = {
+        // receita : [{
+        //     title : "",
+        //     time : "",
+        //     porcoes : 0,
+        //     ingredientes : []
 
-    // }
+        // }]
+    }
     async componentDidMount(){
         const response = await (await api.get('')).data;
-        console.log(response[0].title);
-        this.title = response[0].title;
+        let ing = response.map();
+        console.log(ing);
+        this.setState({
+            title : response.title,
+            time : response.time,
+            porcoes : response.porcoes,
+            ingredientes : response.ingredientes,
+
+        });
     }   
 
     render(){
+        const {receita}  = this.state;
         return(
             <>  
                 
@@ -27,7 +36,7 @@ class Card extends Component{
                         <img className="card_img" src={this.props.img} alt="img card" />
                         <div className="card_line" />
                         <p className="card_text">{this.props.title}</p>
-                        <h2 className="card_ing">{this.title}</h2>
+                        <h2 h2 className="card_ing">{receita}</h2>
                         <ul className="card_ingredientes-lista">
                             <li className="card_ingrediente">500g de contra-filé</li>
                             <li className="card_ingrediente">3 colheres de sopa de manteiga</li>
